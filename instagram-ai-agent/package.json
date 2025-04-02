@@ -1,0 +1,27 @@
+{
+  "name": "instagram-ai-agent",
+  "version": "1.0.0",
+  "description": "AI-powered Instagram posting agent using free tools",
+  "main": "index.js",
+  "scripts": {
+    "post": "node index.js",
+    "schedule": "node scheduler.js",
+    "start": "node scheduler.js --post-now"
+  },
+  "keywords": [
+    "instagram",
+    "ai",
+    "automation",
+    "gemini",
+    "unsplash"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.2",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "instagram-private-api": "^1.46.1",
+    "sharp": "^0.33.5"
+  }
+}
