@@ -1,0 +1,23 @@
+# Environment variables
+.env
+images/
+images
+
+# Dependencies
+node_modules/
+
+# Generated files
+quote_post.jpg
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 

@@ -1,6 +1,6 @@
 # Instagram AI Posting Agent
 
-This is a Node.js application that automatically generates and posts content to Instagram using AI. It uses free tools including Google's Gemini AI and Unsplash for images.
+This is a Node.js application that automatically generates and posts content to Instagram using AI. It uses Google's Gemini AI for text generation and Imagen 3 for high-quality image generation.
 
 ## Preview
 
@@ -12,7 +12,7 @@ Here are some examples of posts created with this tool:
 ## Features
 
 - AI-generated captions and hashtags using Gemini AI
-- Automatic image sourcing from Unsplash
+- High-quality image generation using Google's Imagen 3
 - Image processing to Instagram's recommended dimensions
 - Scheduling functionality for automated posting
 - Topic rotation from customizable list
@@ -21,8 +21,11 @@ Here are some examples of posts created with this tool:
 
 - Node.js v14+ installed
 - Instagram account
-- Gemini AI API key
-- Unsplash API key
+- Google Cloud Platform account with:
+  - Gemini AI API key
+  - Vertex AI API enabled
+  - Imagen 3 API access
+  - Project ID and location configured
 
 ## Setup
 
@@ -39,10 +42,16 @@ npm install
 INSTAGRAM_USERNAME=your_instagram_username
 INSTAGRAM_PASSWORD=your_instagram_password
 GEMINI_API_KEY=your_gemini_api_key
-UNSPLASH_ACCESS_KEY=your_unsplash_access_key
-UNSPLASH_SECRET_KEY=your_unsplash_secret_key
-UNSPLASH_APP_ID=your_unsplash_app_id
+GOOGLE_CLOUD_PROJECT=your_google_cloud_project_id
+GOOGLE_CLOUD_LOCATION=your_google_cloud_location
 ```
+
+4. Set up Google Cloud credentials:
+   - Create a service account and download the JSON key file
+   - Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to point to your key file:
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/service-account-key.json"
+   ```
 
 ## Usage
 
@@ -95,14 +104,8 @@ The scheduler rotates through a list of topics. The default topics are included,
 
 - **Instagram API Usage**: This project uses the unofficial Instagram Private API. This may violate Instagram's terms of service. Use responsibly and at your own risk.
 - **Rate Limiting**: To avoid account flagging, this tool is set to post once per day by default. Adjust with caution.
-- **API Keys**: Both Gemini AI and Unsplash have free tiers with usage limits.
-
-## Alternatives
-
-If you don't want to use Gemini or Unsplash, you can modify the code to use:
-
-- Text Generation: OpenAI API, Hugging Face's free API, local models like GPT-J
-- Image Sources: Free stock photo sites, locally stored images, or DALL-E Mini (Craiyon)
+- **API Costs**: Imagen 3 is a paid service. Make sure to monitor your usage and costs in the Google Cloud Console.
+- **Image Quality**: Imagen 3 provides high-quality, AI-generated images that are unique to your content.
 
 ## License
 

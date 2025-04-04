@@ -13,12 +13,13 @@
     "ai",
     "automation",
     "gemini",
-    "unsplash"
+    "imagen"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.2.2",
+    "@google-cloud/aiplatform": "^3.10.0",
     "axios": "^1.8.4",
     "dotenv": "^16.4.7",
     "instagram-private-api": "^1.46.1",
